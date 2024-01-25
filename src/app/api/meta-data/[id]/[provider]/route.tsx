@@ -1,10 +1,10 @@
-import { getAnifyEpisodes } from "@/lib/anify";
+import { getAnifyEpisodes, getAnifyMetadata } from "@/lib/anify";
 import { NextResponse } from "next/server";
 export async function GET(request: Request, context: any) {
   const { params } = context;
   if (params.provider === "anify"){
-    console.log(`Episodes ${params.id}`)
-    const data = await getAnifyEpisodes(params.id)
+    console.log(`Metadata ${params.id}`)
+    const data = await getAnifyMetadata(params.id)
     return NextResponse.json({
       results: data,
     });
