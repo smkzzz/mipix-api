@@ -38,7 +38,7 @@ export const getAnifyMetadata = async (id: number) => {
     const provider =
       defaultPr !== null && defaultPr !== undefined ? defaultPr : metadata[0];
     provider.data = provider.data.map((item: any) => {
-      return { data: { ...item, providers: [] }, error: false };
+      return  { ...item, providers: [] };
     });
 
     return provider;
